@@ -1,4 +1,4 @@
-import { StepButton } from "./StepButton";
+import { StepButton } from "./stepButton";
 
 export function Sidebar() {
 	return (

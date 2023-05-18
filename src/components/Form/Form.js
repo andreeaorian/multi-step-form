@@ -1,6 +1,6 @@
-import { FormButtons } from "./FormButtons";
-import { FormContent } from "./FormContent";
-import { FormTitle } from "./FormTitle";
+import { FormButtons } from "./formButtons";
+import { FormContent } from "./formContent";
+import { FormTitle } from "./formTitle";
 
 const formTitles = [
 	{

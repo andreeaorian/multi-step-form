@@ -1,4 +1,4 @@
-import { Step1Content } from "./Step1Content";
+import { Step1Content } from "./step1Content";
 
 export function FormContent({ stepIndex }) {
 	return (

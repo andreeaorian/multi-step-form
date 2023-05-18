@@ -3,10 +3,10 @@ import { StepButton } from "./stepButton";
 export function Sidebar() {
 	return (
 		<div className="sidebar">
-			<StepButton stepIndex={1} title="Your info" />
-			<StepButton stepIndex={2} title="Select plan" />
-			<StepButton stepIndex={3} title="Add-ons" />
-			<StepButton stepIndex={4} title="Summary" />
+			<StepButton step={1} title="Your info" />
+			<StepButton step={2} title="Select plan" />
+			<StepButton step={3} title="Add-ons" />
+			<StepButton step={4} title="Summary" />
 		</div>
 	);
 }

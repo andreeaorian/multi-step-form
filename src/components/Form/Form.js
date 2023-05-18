@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { StepContext } from "../../context/stepContext";
 import { FormButtons } from "./formButtons";
 import { FormContent } from "./formContent";
 import { FormTitle } from "./formTitle";
@@ -25,12 +27,13 @@ const formTitles = [
 	},
 ];
 
-export function Form({ stepIndex }) {
+export function Form() {
+	const stepIndex = useContext(StepContext);
 	const titleOject = formTitles.find((x) => x.id === stepIndex);
 	return (
 		<div className="form">
 			<FormTitle title={titleOject.title} subtitle={titleOject.subtitle} />
-			<FormContent stepIndex={stepIndex} />
+			<FormContent />
 			<FormButtons
 				isBackVisible={stepIndex !== 1}
 				isConfirm={stepIndex === 4}

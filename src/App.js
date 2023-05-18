@@ -1,12 +1,18 @@
+import { useContext } from "react";
 import "./App.scss";
 import { Sidebar, Form } from "./components";
+import { StepContext } from "./context/stepContext";
 
 function App() {
+	const stepIndex = useContext(StepContext);
+
 	return (
 		<div className="app">
 			<div className="container">
-				<Sidebar />
-				<Form stepIndex={1} />
+				<StepContext.Provider value={stepIndex}>
+					<Sidebar />
+					<Form />
+				</StepContext.Provider>
 			</div>
 		</div>
 	);

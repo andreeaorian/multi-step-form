@@ -46,6 +46,11 @@
 					line-height: 30px;
 				}
 
+				.step-index.active {
+					background-color: $light_blue;
+					color: $marine_blue;
+				}
+
 				.step-number {
 					grid-area: number;
 					text-align: left;

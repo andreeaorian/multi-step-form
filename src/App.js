@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useState } from "react";
 import "./App.scss";
 import { Sidebar, Form } from "./components";
 import { StepContext } from "./context/stepContext";
 
 function App() {
-	const stepIndex = useContext(StepContext);
+	const increaseStep = () => {
+		setStepIndex((prevState) => ({ index: prevState.index + 1, increaseStep }));
+	};
+
+	const [stepIndex, setStepIndex] = useState({ index: 1, increaseStep });
 
 	return (
 		<div className="app">

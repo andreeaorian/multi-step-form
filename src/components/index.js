@@ -1,2 +1,2 @@
-export { Sidebar } from "./Sidebar";
-export { Form } from "./Form";
+export { Sidebar } from "./Sidebar/Sidebar";
+export { Form } from "./Form/Form";

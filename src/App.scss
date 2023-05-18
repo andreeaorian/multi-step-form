@@ -63,7 +63,88 @@
 		}
 
 		.form {
-			min-width: inherit;
+			min-width: 700px;
+			padding: 20px 70px;
+			justify-content: center;
+			color: $marine_blue;
+
+			.form-title {
+				text-align: left;
+				padding: 5px;
+
+				h1 {
+					margin-bottom: 10px;
+				}
+
+				span {
+					color: $cool_gray;
+				}
+			}
+
+			.form-content {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				gap: 20px;
+				padding: 30px 0;
+
+				div {
+					width: 100%;
+					padding: 10px 0;
+
+					label {
+						padding: 0 5px;
+					}
+
+					input {
+						width: 100%;
+						height: 40px;
+						margin-top: 8px;
+						border-radius: 5px;
+						border: 1px solid $light_gray;
+						padding: 10px;
+					}
+				}
+			}
+
+			.form-buttons {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding-top: 30px;
+
+				button {
+					font-weight: bold;
+					height: 40px;
+					padding: 10px;
+					border: none;
+					cursor: pointer;
+				}
+
+				.submit {
+					background-color: $marine_blue;
+					color: $white;
+					border-radius: 5px;
+
+					&:hover {
+						background-color: $purplis_blue;
+					}
+				}
+
+				.back {
+					background-color: transparent;
+					color: $cool_gray;
+
+					&:hover {
+						color: $marine_blue;
+					}
+				}
+
+				.back.invisible {
+					visibility: hidden;
+				}
+			}
 		}
 	}
 }

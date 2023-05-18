@@ -15,9 +15,51 @@
 		min-width: 900px;
 
 		.sidebar {
-			background: url("./assets/img/bg-sidebar-desktop.svg") no-repeat;
+			background: url("./assets/img/bg-sidebar-desktop.svg") no-repeat 100% 100%;
 			width: 275px;
 			height: 570px;
+			padding-top: 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			.step-button {
+				display: grid;
+				grid-template-areas:
+					"index  number"
+					"index  title";
+				justify-content: flex-start;
+				align-items: center;
+				height: 50px;
+				margin: 0 40px;
+				color: $white;
+
+				.step-index {
+					grid-area: index;
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					border: 2px solid $light_blue;
+					font-weight: bold;
+					margin-right: 10px;
+					text-align: center;
+					line-height: 30px;
+				}
+
+				.step-number {
+					grid-area: number;
+					text-align: left;
+					margin: 0 5px;
+				}
+
+				.step-title {
+					grid-area: title;
+					text-transform: uppercase;
+					font-weight: bold;
+					margin: 0 5px;
+					width: 115px;
+				}
+			}
 		}
 
 		.form {

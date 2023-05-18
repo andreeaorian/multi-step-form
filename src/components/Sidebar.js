@@ -1,12 +1,12 @@
+import { StepButton } from "./StepButton";
+
 export function Sidebar() {
 	return (
 		<div className="sidebar">
-			<ol>
-				<li>Step 1</li>
-				<li>Step 2</li>
-				<li>Step 3</li>
-				<li>Step 4</li>
-			</ol>
+			<StepButton stepIndex={1} title="Your info" />
+			<StepButton stepIndex={2} title="Select plan" />
+			<StepButton stepIndex={3} title="Add-ons" />
+			<StepButton stepIndex={4} title="Summary" />
 		</div>
 	);
 }

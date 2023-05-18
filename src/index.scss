@@ -24,9 +24,12 @@
 		url("./assets/fonts/Ubuntu-Bold.ttf") format("ttf");
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body,
 html {
-	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	font-family: "Ubuntu";

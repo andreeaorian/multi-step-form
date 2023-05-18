@@ -6,7 +6,7 @@ function App() {
 		<div className="app">
 			<div className="container">
 				<Sidebar />
-				<Form />
+				<Form stepIndex={1} />
 			</div>
 		</div>
 	);

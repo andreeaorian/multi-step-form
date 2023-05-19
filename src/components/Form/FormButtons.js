@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { StepContext } from "../../context/stepContext";
 
 export function FormButtons({ isBackVisible, isConfirm }) {
-	const step = useContext(StepContext);
+	const { increaseStep, decreaseStep } = useContext(StepContext);
 	return (
 		<div className="form-buttons">
 			<button
 				type="button"
-				className={`back ${isBackVisible ? "" : "invisible"}`}>
+				className={`back ${isBackVisible ? "" : "invisible"}`}
+				onClick={decreaseStep}>
 				Go Back
 			</button>
 			{isConfirm ? (
@@ -15,7 +16,7 @@ export function FormButtons({ isBackVisible, isConfirm }) {
 					Confirm
 				</button>
 			) : (
-				<button type="button" className="submit" onClick={step.increaseStep}>
+				<button type="button" className="submit" onClick={increaseStep}>
 					Next Step
 				</button>
 			)}

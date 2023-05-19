@@ -28,15 +28,15 @@ const formTitles = [
 ];
 
 export function Form() {
-	const step = useContext(StepContext);
-	const titleOject = formTitles.find((x) => x.id === step.index);
+	const { stepIndex } = useContext(StepContext);
+	const titleOject = formTitles.find((x) => x.id === stepIndex);
 	return (
 		<div className="form">
 			<FormTitle title={titleOject.title} subtitle={titleOject.subtitle} />
 			<FormContent />
 			<FormButtons
-				isBackVisible={step.index !== 1}
-				isConfirm={step.index === 4}
+				isBackVisible={stepIndex !== 1}
+				isConfirm={stepIndex === 4}
 			/>
 		</div>
 	);

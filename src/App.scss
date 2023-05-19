@@ -68,7 +68,7 @@
 		}
 
 		.form {
-			min-width: 700px;
+			width: 700px;
 			padding: 20px 70px;
 			justify-content: center;
 			color: $marine_blue;
@@ -121,6 +121,44 @@
 								color: $cool_gray;
 								font-weight: normal;
 							}
+						}
+					}
+				}
+
+				.step2 {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					gap: 20px;
+
+					.plan-box {
+						margin: 20px 0;
+						padding: 10px;
+						text-align: left;
+						border: 1px solid $light_gray;
+						border-radius: 10px;
+						background-color: $white;
+						width: 250px;
+
+						.plan-icon {
+							margin-top: 5px;
+							margin-bottom: 20px;
+						}
+
+						.plan-title {
+							color: $marine_blue;
+							font-weight: bold;
+							padding-top: 10px;
+						}
+
+						.plan-price {
+							padding-top: 10px;
+							color: $cool_gray;
+						}
+
+						.plan-discount {
+							padding-top: 10px;
+							color: $marine_blue;
 						}
 					}
 				}

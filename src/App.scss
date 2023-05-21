@@ -125,7 +125,7 @@
 					}
 				}
 
-				.step2 {
+				.step2-plans {
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
@@ -149,6 +149,8 @@
 							color: $marine_blue;
 							font-weight: bold;
 							padding-top: 10px;
+							font-size: 16px;
+							font-weight: bold;
 						}
 
 						.plan-price {
@@ -162,8 +164,87 @@
 						}
 					}
 				}
-			}
 
+				.step2-billing {
+					height: 50px;
+					margin: 20px 0;
+					border: 1px solid $light_gray;
+					border-radius: 5px;
+					background-color: $magnolia;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.billing-toggle {
+						position: relative;
+						display: inline-block;
+						width: 50px;
+						height: 24px;
+
+						.billing-monthly {
+							font-weight: bold;
+							font-size: 14px;
+							position: absolute;
+							top: 3px;
+							left: -60px;
+						}
+
+						.billing-yearly {
+							position: absolute;
+							top: 3px;
+							right: -48px;
+							font-weight: bold;
+							font-size: 14px;
+						}
+
+						.blue {
+							color: $marine_blue;
+						}
+
+						.gray {
+							color: $cool_gray;
+						}
+
+						.billing-toggle-input {
+							display: none;
+
+							&:checked + .billing-toggle-handler {
+								&::before {
+									-webkit-transform: translateX(26px);
+									-ms-transform: translateX(26px);
+									transform: translateX(26px);
+								}
+							}
+						}
+
+						.billing-toggle-handler {
+							position: absolute;
+							cursor: pointer;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							background-color: $marine_blue;
+							-webkit-transition: 0.4s;
+							transition: 0.4s;
+							border-radius: 34px;
+
+							&::before {
+								position: absolute;
+								content: "";
+								height: 16px;
+								width: 16px;
+								left: 4px;
+								bottom: 4px;
+								background-color: $white;
+								-webkit-transition: 0.4s;
+								transition: 0.4s;
+								border-radius: 50%;
+							}
+						}
+					}
+				}
+			}
 			.form-buttons {
 				display: flex;
 				flex-direction: row;

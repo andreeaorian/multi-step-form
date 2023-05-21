@@ -13,7 +13,7 @@ export function Step2Content() {
 	};
 
 	return (
-		<div>
+		<div className="step2">
 			<div className="step2-plans">
 				<PlanBox
 					icon={ArcadeIcon}

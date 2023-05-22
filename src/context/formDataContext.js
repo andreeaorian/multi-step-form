@@ -7,6 +7,7 @@ const initialState = {
 	planType: "Arcade",
 	pricePerMonth: 9,
 	yearlyBilling: false,
+	validationErrors: {},
 	addOns: [],
 };
 
@@ -14,6 +15,7 @@ const actions = {
 	SET_PERSONAL_INFO: "SET_PERSONAL_INFO",
 	SET_BILLING_PLAN: "SET_BILLING_PLAN",
 	SET_ADD_ONS: "SET_ADD_ONS",
+	SET_VALIDATION_ERRORS: "SET_VALIDATION_ERRORS",
 };
 
 const reducer = (state, action) => {
@@ -33,6 +35,11 @@ const reducer = (state, action) => {
 				...state,
 				addOns: [...state.addOns, ...action.payload],
 			};
+		case actions.SET_VALIDATION_ERRORS:
+			return {
+				...state,
+				validationErrors: { ...action.payload },
+			};
 		default:
 			return state;
 	}
@@ -51,6 +58,7 @@ export const FormDataContextProvider = ({ children }) => {
 		pricePerMonth: state.pricePerMonth,
 		yearlyBilling: state.yearlyBilling,
 		addOns: state.addOns,
+		validationErrors: state.validationErrors,
 		setPersonalInfo: (personalInfo) => {
 			dispatch({ type: actions.SET_PERSONAL_INFO, payload: personalInfo });
 		},
@@ -59,6 +67,9 @@ export const FormDataContextProvider = ({ children }) => {
 		},
 		setAddOns: (addOns) => {
 			dispatch({ type: actions.SET_ADD_ONS, payload: addOns });
+		},
+		setValidationErrors: (errors) => {
+			dispatch({ type: actions.SET_VALIDATION_ERRORS, payload: errors });
 		},
 	};
 

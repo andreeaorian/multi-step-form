@@ -105,8 +105,16 @@
 						width: 100%;
 						padding: 10px 0;
 
-						label {
+						.label-error {
 							padding: 0 5px;
+							display: flex;
+							justify-content: space-between;
+
+							.error {
+								color: $strawberry_red;
+								font-size: 14px;
+								font-weight: bold;
+							}
 						}
 
 						input {
@@ -126,6 +134,10 @@
 							&::placeholder {
 								color: $cool_gray;
 								font-weight: normal;
+							}
+
+							&.error {
+								border-color: $strawberry_red;
 							}
 						}
 					}

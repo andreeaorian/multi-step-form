@@ -1,4 +1,21 @@
+import { useContext } from "react";
+import { FormDataContext } from "../../context/formDataContext";
+
 export function Step1Content() {
+	const { setPersonalInfo } = useContext(FormDataContext);
+
+	const setName = ({ target: { value } }) => {
+		setPersonalInfo({ name: value });
+	};
+
+	const setEmail = ({ target: { value } }) => {
+		setPersonalInfo({ email: value });
+	};
+
+	const setPhone = ({ target: { value } }) => {
+		setPersonalInfo({ phone: value });
+	};
+
 	return (
 		<form className="step1">
 			<div className="group">
@@ -8,6 +25,7 @@ export function Step1Content() {
 					id="name"
 					name="name"
 					placeholder="e.g. Stephen King"
+					onChange={setName}
 					required
 				/>
 			</div>
@@ -19,6 +37,7 @@ export function Step1Content() {
 					id="email"
 					name="email"
 					placeholder="e.g. stephenking@lorem.com"
+					onChange={setEmail}
 					required
 				/>
 			</div>
@@ -30,6 +49,7 @@ export function Step1Content() {
 					id="phone"
 					name="phone"
 					placeholder="e.g. +1 234 567 890"
+					onChange={setPhone}
 					required
 				/>
 			</div>

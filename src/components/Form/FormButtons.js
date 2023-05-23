@@ -3,7 +3,7 @@ import { FormDataContext } from "../../context/formDataContext";
 import { StepContext } from "../../context/stepContext";
 
 export function FormButtons({ isBackVisible, isConfirm }) {
-	const { increaseStep, decreaseStep } = useContext(StepContext);
+	const { stepIndex, increaseStep, decreaseStep } = useContext(StepContext);
 	const { name, email, phone, setValidationErrors } =
 		useContext(FormDataContext);
 
@@ -38,12 +38,17 @@ export function FormButtons({ isBackVisible, isConfirm }) {
 	};
 
 	const saveAndGoToNextStep = () => {
-		const validationErrors = validate();
-		setValidationErrors(validationErrors);
+		if (stepIndex === 1) {
+			const validationErrors = validate();
+			setValidationErrors(validationErrors);
 
-		if (Object.keys(validationErrors).length === 0) {
-			increaseStep();
+			if (Object.keys(validationErrors).length === 0) {
+				increaseStep();
+			}
+			return;
 		}
+
+		increaseStep();
 	};
 
 	return (

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { FormDataContext } from "../../context/formDataContext";
 import { ExtraOption } from "./extraOption";
@@ -24,11 +24,16 @@ const customizableProfile = {
 const allOptions = [onlineService, largerStorage, customizableProfile];
 
 export function Step3Content() {
-	const { yearlyBilling } = useContext(FormDataContext);
-	const [isSelected, setIsSelected] = useState(true);
+	const { yearlyBilling, addOns, setAddOns } = useContext(FormDataContext);
 
-	const selectOption = () => {
-		setIsSelected((prevState) => !prevState);
+	const selectOption = (title) => {
+		const alreadyExists = addOns.find((x) => x.title === title);
+		if (alreadyExists) {
+			setAddOns([...addOns.filter((x) => x.title !== title)]);
+		} else {
+			const optionsSelected = allOptions.find((x) => x.title === title);
+			setAddOns([...addOns, optionsSelected]);
+		}
 	};
 
 	return (
@@ -39,9 +44,7 @@ export function Step3Content() {
 				price={
 					yearlyBilling ? onlineService.yearlyPrice : onlineService.monthlyPrice
 				}
-				isYearly={yearlyBilling}
-				isSelected={isSelected}
-				select={selectOption}
+				select={() => selectOption(onlineService.title)}
 			/>
 			<ExtraOption
 				title={largerStorage.title}
@@ -49,8 +52,7 @@ export function Step3Content() {
 				price={
 					yearlyBilling ? largerStorage.yearlyPrice : largerStorage.monthlyPrice
 				}
-				isYearly={yearlyBilling}
-				isSelected={false}
+				select={() => selectOption(largerStorage.title)}
 			/>
 			<ExtraOption
 				title={customizableProfile.title}
@@ -60,8 +62,7 @@ export function Step3Content() {
 						? customizableProfile.yearlyPrice
 						: customizableProfile.monthlyPrice
 				}
-				isYearly={yearlyBilling}
-				isSelected={false}
+				select={() => selectOption(customizableProfile.title)}
 			/>
 		</div>
 	);

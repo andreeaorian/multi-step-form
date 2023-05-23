@@ -33,7 +33,7 @@ const reducer = (state, action) => {
 		case actions.SET_ADD_ONS:
 			return {
 				...state,
-				addOns: [...state.addOns, ...action.payload],
+				addOns: [...action.payload],
 			};
 		case actions.SET_VALIDATION_ERRORS:
 			return {

@@ -1,27 +1,25 @@
-export function ExtraOption({
-	title,
-	description,
-	price,
-	isYearly,
-	isSelected,
-	select,
-}) {
+import { useContext } from "react";
+import { FormDataContext } from "../../context/formDataContext";
+
+export function ExtraOption({ title, description, price, select }) {
+	const { yearlyBilling, addOns } = useContext(FormDataContext);
+	const isSelected = !!addOns?.find((x) => x.title === title);
+
 	return (
-		<button
-			className={`extra-option ${isSelected ? "selected" : ""}`}
-			onClick={select}>
+		<div className={`extra-option ${isSelected ? "selected" : ""}`}>
 			<input
 				className="option-checkbox"
 				type="checkbox"
-				defaultChecked={isSelected}
+				value={isSelected}
+				onChange={select}
 			/>
 			<div className="option-text">
 				<div className="option-title">{title}</div>
 				<div className="option-description">{description}</div>
 			</div>
 			<div className="option-price">{`+$${price}${
-				isYearly ? "/yr" : "/mo"
+				yearlyBilling ? "/yr" : "/mo"
 			}`}</div>
-		</button>
+		</div>
 	);
 }

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { StepContext } from "../../context/stepContext";
 import { Step1Content } from "./step1Content";
 import { Step2Content } from "./step2Content";
+import { Step3Content } from "./step3Content";
 
 export function FormContent() {
 	const { stepIndex } = useContext(StepContext);
@@ -9,6 +10,7 @@ export function FormContent() {
 		<div className="form-content">
 			{stepIndex === 1 && <Step1Content />}
 			{stepIndex === 2 && <Step2Content />}
+			{stepIndex === 3 && <Step3Content />}
 		</div>
 	);
 }

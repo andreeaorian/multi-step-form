@@ -274,6 +274,101 @@
 						}
 					}
 				}
+
+				.step3 {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 20px;
+					padding-bottom: 40px;
+					margin-top: 20px;
+
+					.extra-option {
+						height: 70px;
+						padding: 10px 20px;
+						border: 1px solid $light_gray;
+						border-radius: 5px;
+						text-align: left;
+						background-color: $white;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						font-size: 14px;
+
+						.option-checkbox {
+							appearance: none;
+							width: 20px;
+							height: 20px;
+							position: relative;
+							cursor: pointer;
+
+							&::before {
+								content: "";
+								display: block;
+								position: absolute;
+								width: 20px;
+								height: 20px;
+								top: 0;
+								left: 0;
+								border: 1px solid $light_gray;
+								border-radius: 5px;
+								background-color: $white;
+							}
+
+							&:checked::before {
+								content: "";
+								display: block;
+								position: absolute;
+								width: 20px;
+								height: 20px;
+								top: 0;
+								left: 0;
+								background-color: $purplis_blue;
+								border: 1px solid $purplis_blue;
+							}
+
+							&:checked::after {
+								content: "";
+								display: block;
+								width: 5px;
+								height: 10px;
+								border: solid $white;
+								border-width: 0 2px 2px 0;
+								-webkit-transform: rotate(45deg);
+								-ms-transform: rotate(45deg);
+								transform: rotate(45deg);
+								position: absolute;
+								top: 3px;
+								left: 8px;
+							}
+						}
+
+						.option-text {
+							text-align: left;
+							width: 360px;
+
+							.option-title {
+								font-size: 16px;
+								font-weight: bold;
+								color: $marine_blue;
+								margin-bottom: 5px;
+							}
+
+							.option-description {
+								color: $cool_gray;
+							}
+						}
+
+						.option-price {
+							color: $purplis_blue;
+						}
+
+						&.selected {
+							background-color: $magnolia;
+							border-color: $purplis_blue;
+						}
+					}
+				}
 			}
 
 			.form-buttons {

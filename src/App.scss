@@ -479,5 +479,30 @@
 				}
 			}
 		}
+
+		.confirmation-message {
+			width: 700px;
+			padding: 100px;
+			padding-top: 150px;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			.confirmation-title {
+				padding: 10px 20px;
+				color: $marine_blue;
+			}
+
+			.confirmation-details {
+				font-size: 18px;
+				color: $cool_gray;
+				padding: 0 10px;
+				line-height: 25px;
+			}
+		}
+
+		.hidden {
+			display: none;
+		}
 	}
 }

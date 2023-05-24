@@ -4,7 +4,7 @@ import { StepContext } from "../../context/stepContext";
 
 export function FormButtons({ isBackVisible, isConfirm }) {
 	const { stepIndex, increaseStep, decreaseStep } = useContext(StepContext);
-	const { name, email, phone, setValidationErrors } =
+	const { name, email, phone, setValidationErrors, confirm } =
 		useContext(FormDataContext);
 
 	const validate = () => {
@@ -60,7 +60,7 @@ export function FormButtons({ isBackVisible, isConfirm }) {
 				Go Back
 			</button>
 			{isConfirm ? (
-				<button type="button" className="submit">
+				<button type="button" className="submit" onClick={confirm}>
 					Confirm
 				</button>
 			) : (

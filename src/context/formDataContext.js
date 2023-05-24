@@ -9,6 +9,7 @@ const initialState = {
 	yearlyBilling: false,
 	validationErrors: {},
 	addOns: [],
+	isConfirmed: false,
 };
 
 const actions = {
@@ -16,6 +17,7 @@ const actions = {
 	SET_BILLING_PLAN: "SET_BILLING_PLAN",
 	SET_ADD_ONS: "SET_ADD_ONS",
 	SET_VALIDATION_ERRORS: "SET_VALIDATION_ERRORS",
+	CONFIRM: "CONFIRM",
 };
 
 const reducer = (state, action) => {
@@ -40,6 +42,12 @@ const reducer = (state, action) => {
 				...state,
 				validationErrors: { ...action.payload },
 			};
+		case actions.CONFIRM: {
+			return {
+				...state,
+				isConfirmed: true,
+			};
+		}
 		default:
 			return state;
 	}
@@ -59,6 +67,7 @@ export const FormDataContextProvider = ({ children }) => {
 		yearlyBilling: state.yearlyBilling,
 		addOns: state.addOns,
 		validationErrors: state.validationErrors,
+		isConfirmed: state.isConfirmed,
 		setPersonalInfo: (personalInfo) => {
 			dispatch({ type: actions.SET_PERSONAL_INFO, payload: personalInfo });
 		},
@@ -70,6 +79,9 @@ export const FormDataContextProvider = ({ children }) => {
 		},
 		setValidationErrors: (errors) => {
 			dispatch({ type: actions.SET_VALIDATION_ERRORS, payload: errors });
+		},
+		confirm: () => {
+			dispatch({ type: actions.CONFIRM });
 		},
 	};
 

@@ -1,7 +1,14 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
 
-export function FormInput({ label, value, type, id, placeholder, onChange }) {
+export default function FormInput({
+	label,
+	value,
+	type,
+	id,
+	placeholder,
+	onChange,
+}) {
 	const { validationErrors } = useContext(FormDataContext);
 
 	return (

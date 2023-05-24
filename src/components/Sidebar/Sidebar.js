@@ -1,6 +1,6 @@
-import { StepButton } from "./stepButton";
+import StepButton from "./stepButton";
 
-export function Sidebar() {
+export default function Sidebar() {
 	return (
 		<div className="sidebar">
 			<StepButton step={1} title="Your info" />

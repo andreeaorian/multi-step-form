@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
 import { StepContext } from "../../context/stepContext";
 
-export function FormButtons({ isBackVisible, isConfirm }) {
+export default function FormButtons({ isBackVisible, isConfirm }) {
 	const { stepIndex, increaseStep, decreaseStep } = useContext(StepContext);
 	const { name, email, phone, setValidationErrors, confirm } =
 		useContext(FormDataContext);

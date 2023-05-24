@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
 
-export function ExtraOption({ title, description, price, select }) {
+export default function ExtraOption({ title, description, price, select }) {
 	const { yearlyBilling, addOns } = useContext(FormDataContext);
 	const isSelected = !!addOns?.find((x) => x.title === title);
 

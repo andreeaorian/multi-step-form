@@ -3,7 +3,7 @@ import { FormDataContext } from "../../context/formDataContext";
 
 import { ReactComponent as ThankYouIcon } from "../../assets/img/icon-thank-you.svg";
 
-export function ConfirmationMessage() {
+export default function ConfirmationMessage() {
 	const { isConfirmed } = useContext(FormDataContext);
 
 	return (

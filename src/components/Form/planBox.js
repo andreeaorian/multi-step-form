@@ -1,4 +1,4 @@
-export function PlanBox({
+export default function PlanBox({
 	icon: Icon,
 	title,
 	price,

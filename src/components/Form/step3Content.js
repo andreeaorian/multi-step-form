@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-
 import { FormDataContext } from "../../context/formDataContext";
-import { ExtraOption } from "./extraOption";
+import ExtraOption from "./extraOption";
 
 const onlineService = {
 	title: "Online sevice",
@@ -23,7 +22,7 @@ const customizableProfile = {
 };
 const allOptions = [onlineService, largerStorage, customizableProfile];
 
-export function Step3Content() {
+export default function Step3Content() {
 	const { yearlyBilling, addOns, setAddOns } = useContext(FormDataContext);
 
 	const selectOption = (title) => {

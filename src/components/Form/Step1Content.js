@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
-import { FormInput } from "./formInput";
+import FormInput from "./formInput";
 
-export function Step1Content() {
+export default function Step1Content() {
 	const { name, email, phone, setPersonalInfo } = useContext(FormDataContext);
 
 	const setName = ({ target: { value } }) => {

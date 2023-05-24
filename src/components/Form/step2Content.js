@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { PlanBox } from "./planBox";
+import PlanBox from "./planBox";
+import { FormDataContext } from "../../context/formDataContext";
+
 import { ReactComponent as ArcadeIcon } from "../../assets/img/icon-arcade.svg";
 import { ReactComponent as AdvancedIcon } from "../../assets/img/icon-advanced.svg";
 import { ReactComponent as ProIcon } from "../../assets/img/icon-pro.svg";
-import { FormDataContext } from "../../context/formDataContext";
 
 const arcadePlan = {
 	title: "Arcade",
@@ -22,7 +23,7 @@ const proPlan = {
 };
 const allPlans = [arcadePlan, advancedPlan, proPlan];
 
-export function Step2Content() {
+export default function Step2Content() {
 	const { planType, yearlyBilling, setBillingPlan } =
 		useContext(FormDataContext);
 

@@ -1,4 +1,4 @@
-export function FormTitle({ title, subtitle }) {
+export default function FormTitle({ title, subtitle }) {
 	return (
 		<div className="form-title">
 			<h1>{title}</h1>

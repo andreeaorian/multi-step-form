@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
 import { StepContext } from "../../context/stepContext";
-import { ConfirmationMessage } from "./confirmationMessage";
-import { FormButtons } from "./formButtons";
-import { FormContent } from "./formContent";
-import { FormTitle } from "./formTitle";
+import ConfirmationMessage from "./confirmationMessage";
+import FormButtons from "./formButtons";
+import FormContent from "./formContent";
+import FormTitle from "./formTitle";
 
 const formTitles = [
 	{
@@ -29,7 +29,7 @@ const formTitles = [
 	},
 ];
 
-export function Form() {
+export default function Form() {
 	const { stepIndex } = useContext(StepContext);
 	const { isConfirmed } = useContext(FormDataContext);
 	const titleOject = formTitles.find((x) => x.id === stepIndex);

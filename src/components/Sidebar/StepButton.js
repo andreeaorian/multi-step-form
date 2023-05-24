@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StepContext } from "../../context/stepContext";
 
-export function StepButton({ step, title }) {
+export default function StepButton({ step, title }) {
 	const { stepIndex } = useContext(StepContext);
 	return (
 		<div className="step-button">

@@ -10,7 +10,7 @@ export function ExtraOption({ title, description, price, select }) {
 			<input
 				className="option-checkbox"
 				type="checkbox"
-				value={isSelected}
+				checked={isSelected}
 				onChange={select}
 			/>
 			<div className="option-text">

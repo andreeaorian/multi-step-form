@@ -371,10 +371,61 @@
 				}
 
 				.step4 {
+					.summarize {
+						height: 220px;
+						margin-top: 20px;
+						border: 2px solid $alabaster;
+						border-radius: 10px;
+						background-color: $alabaster;
+						padding: 20px;
+
+						.plan-details {
+							display: flex;
+							justify-content: space-between;
+							align-content: center;
+							padding-bottom: 20px;
+							font-size: 18px;
+							color: $marine_blue;
+							border-bottom: 1px solid $light_gray;
+
+							.plan-details-title {
+								font-weight: 600;
+
+								.change-button {
+									font-size: 16px;
+									font-weight: normal;
+									color: $cool_gray;
+									padding: 5px 0;
+									text-decoration: underline;
+									cursor: pointer;
+								}
+							}
+
+							.plan-details-price {
+								padding: 10px 0;
+								font-weight: bold;
+							}
+						}
+
+						.add-ons-details {
+							padding-top: 10px;
+
+							.add-on {
+								display: flex;
+								justify-content: space-between;
+								padding: 10px 0;
+								color: $cool_gray;
+
+								.add-on-price {
+									color: $marine_blue;
+								}
+							}
+						}
+					}
 					.total-price {
 						display: flex;
 						justify-content: space-between;
-						padding: 10px;
+						padding: 20px;
 
 						.title {
 							color: $cool_gray;

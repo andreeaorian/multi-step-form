@@ -7,6 +7,7 @@ const initialState = {
 const actions = {
 	INCREASE_STEP: "INCREASE_STEP",
 	DECREASE_STEP: "DECREASE_STEP",
+	CHANGE_STEP: "CHANGE_STEP",
 };
 
 const reducer = (state, action) => {
@@ -20,6 +21,12 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				stepIndex: state.stepIndex - 1,
+			};
+
+		case actions.CHANGE_STEP:
+			return {
+				...state,
+				stepIndex: action.payload,
 			};
 		default:
 			return state;
@@ -38,6 +45,9 @@ export const StepContextProvider = ({ children }) => {
 		},
 		decreaseStep: () => {
 			dispatch({ type: actions.DECREASE_STEP });
+		},
+		changeStep: (step) => {
+			dispatch({ type: actions.CHANGE_STEP, payload: step });
 		},
 	};
 

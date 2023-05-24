@@ -369,6 +369,25 @@
 						}
 					}
 				}
+
+				.step4 {
+					.total-price {
+						display: flex;
+						justify-content: space-between;
+						padding: 10px;
+
+						.title {
+							color: $cool_gray;
+							font-size: 16px;
+						}
+
+						.price {
+							color: $purplis_blue;
+							font-size: 18px;
+							font-weight: bold;
+						}
+					}
+				}
 			}
 
 			.form-buttons {

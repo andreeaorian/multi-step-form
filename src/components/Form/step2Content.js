@@ -26,8 +26,8 @@ export function Step2Content() {
 	const { planType, yearlyBilling, setBillingPlan } =
 		useContext(FormDataContext);
 
-	const changeBilling = () => {
-		setBillingPlan({ yearlyBilling: !yearlyBilling });
+	const changeBilling = (e) => {
+		setBillingPlan({ yearlyBilling: e.target.checked });
 	};
 
 	const choosePlan = (title) => {
@@ -84,7 +84,7 @@ export function Step2Content() {
 						className="billing-toggle-input"
 						type="checkbox"
 						id="billingType"
-						value={yearlyBilling}
+						checked={yearlyBilling}
 						onChange={changeBilling}
 					/>
 					<span className="billing-toggle-handler" />

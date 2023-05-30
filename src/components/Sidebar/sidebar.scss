@@ -1,0 +1,72 @@
+@import "../../assets/scss/variables.scss";
+
+.sidebar {
+	background: url("../../assets/img/bg-sidebar-desktop.svg") no-repeat 100% 100%;
+	width: 17rem;
+	height: 35.6rem;
+	padding-top: 1.87rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.94rem;
+
+	.step-button {
+		display: grid;
+		grid-template-areas:
+			"index  number"
+			"index  title";
+		justify-content: flex-start;
+		align-items: center;
+		height: 3rem;
+		margin: 0 2.5rem;
+		color: $white;
+
+		.step-index {
+			grid-area: index;
+			width: 1.87rem;
+			height: 1.87rem;
+			border-radius: 50%;
+			border: 0.125rem solid $light_blue;
+			font-weight: bold;
+			margin-right: 0.65rem;
+			text-align: center;
+			line-height: 1.87rem;
+		}
+
+		.step-index.active {
+			background-color: $light_blue;
+			color: $marine_blue;
+		}
+
+		.step-number {
+			grid-area: number;
+			text-align: left;
+			margin: 0 0.313rem;
+		}
+
+		.step-title {
+			grid-area: title;
+			text-transform: uppercase;
+			font-weight: bold;
+			margin: 0 0.313rem;
+			width: 7.2rem;
+		}
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	//Desktop
+	.container {
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+	//Tablet
+	.container {
+	}
+}
+
+@media screen and (max-width: 375px) {
+	//Mobile
+	.container {
+	}
+}

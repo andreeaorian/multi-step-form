@@ -1,0 +1,431 @@
+@import "../../assets/scss/variables.scss";
+
+.form {
+	width: 43.7rem;
+	padding: 1.25rem 6.25rem;
+	justify-content: center;
+	color: $marine_blue;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.form-title {
+		text-align: left;
+		padding: 0.313rem;
+
+		h1 {
+			margin-bottom: 0.65rem;
+		}
+
+		span {
+			color: $cool_gray;
+		}
+	}
+
+	.form-content {
+		height: 22.5rem;
+
+		.step1 {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1.25rem;
+			padding: 1.87rem 0;
+
+			.group {
+				width: 100%;
+				padding: 0.65rem 0;
+
+				.label-error {
+					padding: 0 0.313rem;
+					display: flex;
+					justify-content: space-between;
+
+					.error {
+						color: $strawberry_red;
+						font-size: 0.875rem;
+						font-weight: bold;
+					}
+				}
+
+				input {
+					width: 100%;
+					height: 2.5rem;
+					margin-top: 0.5rem;
+					border-radius: 0.313rem;
+					border: 0.063rem solid $light_gray;
+					padding: 0.65rem;
+					color: $marine_blue;
+					font-weight: bold;
+
+					&:focus {
+						outline-color: $purplis_blue;
+					}
+
+					&::placeholder {
+						color: $cool_gray;
+						font-weight: normal;
+					}
+
+					&.error {
+						border-color: $strawberry_red;
+					}
+				}
+			}
+		}
+
+		.step2 {
+			padding-bottom: 2.5rem;
+
+			.step2-plans {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				gap: 1.25rem;
+
+				.plan-box {
+					margin: 1.25rem 0;
+					padding: 0.65rem 1.25rem;
+					text-align: left;
+					border: 0.063rem solid $light_gray;
+					border-radius: 0.65rem;
+					background-color: $white;
+					width: 15.6rem;
+					cursor: pointer;
+
+					.plan-icon {
+						margin-top: 0.65rem;
+						margin-bottom: 1.87rem;
+					}
+
+					.plan-title {
+						color: $marine_blue;
+						font-weight: bold;
+						padding: 0.65rem 0;
+						font-size: 1.125rem;
+						font-weight: bold;
+					}
+
+					.plan-price {
+						padding-bottom: 0.65rem;
+						font-size: 1rem;
+						color: $cool_gray;
+					}
+
+					.plan-discount {
+						padding-bottom: 0.65rem;
+						font-size: 0.875rem;
+						color: $marine_blue;
+					}
+
+					&.selected {
+						background-color: $magnolia;
+						border-color: $purplis_blue;
+					}
+				}
+			}
+
+			.step2-billing {
+				height: 3rem;
+				margin: 1.25rem 0;
+				border: 0.063rem solid $magnolia;
+				border-radius: 0.313rem;
+				background-color: $magnolia;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.billing-toggle {
+					position: relative;
+					display: inline-block;
+					width: 3rem;
+					height: 1.5rem;
+
+					.billing-monthly {
+						font-weight: bold;
+						font-size: 0.875rem;
+						position: absolute;
+						top: 0.188rem;
+						left: -3.75rem;
+					}
+
+					.billing-yearly {
+						position: absolute;
+						top: 0.188rem;
+						right: -3rem;
+						font-weight: bold;
+						font-size: 0.875rem;
+					}
+
+					.blue {
+						color: $marine_blue;
+					}
+
+					.gray {
+						color: $cool_gray;
+					}
+
+					.billing-toggle-input {
+						display: none;
+
+						&:checked + .billing-toggle-handler {
+							&::before {
+								-webkit-transform: translateX(1.625rem);
+								-ms-transform: translateX(1.625rem);
+								transform: translateX(1.625rem);
+							}
+						}
+					}
+
+					.billing-toggle-handler {
+						position: absolute;
+						cursor: pointer;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background-color: $marine_blue;
+						-webkit-transition: 0.4s;
+						transition: 0.4s;
+						border-radius: 2.125rem;
+
+						&::before {
+							position: absolute;
+							content: "";
+							height: 1rem;
+							width: 1rem;
+							left: 0.25rem;
+							bottom: 0.25rem;
+							background-color: $white;
+							-webkit-transition: 0.4s;
+							transition: 0.4s;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+		}
+
+		.step3 {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 1.25rem;
+			padding-bottom: 2.5rem;
+			margin-top: 1.25rem;
+
+			.extra-option {
+				height: 4.375rem;
+				padding: 0.65rem 1.25rem;
+				border: 0.063rem solid $light_gray;
+				border-radius: 0.313rem;
+				text-align: left;
+				background-color: $white;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 0.875rem;
+
+				.option-checkbox {
+					appearance: none;
+					width: 1.25rem;
+					height: 1.25rem;
+					position: relative;
+					cursor: pointer;
+
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						width: 1.25rem;
+						height: 1.25rem;
+						top: 0;
+						left: 0;
+						border: 0.063rem solid $light_gray;
+						border-radius: 0.313rem;
+						background-color: $white;
+					}
+
+					&:checked::before {
+						content: "";
+						display: block;
+						position: absolute;
+						width: 1.25rem;
+						height: 1.25rem;
+						top: 0;
+						left: 0;
+						background-color: $purplis_blue;
+						border: 0.063rem solid $purplis_blue;
+					}
+
+					&:checked::after {
+						content: "";
+						display: block;
+						width: 0.313rem;
+						height: 0.65rem;
+						border: solid $white;
+						border-width: 0 0.125rem 0.125rem 0;
+						-webkit-transform: rotate(45deg);
+						-ms-transform: rotate(45deg);
+						transform: rotate(45deg);
+						position: absolute;
+						top: 0.188rem;
+						left: 0.5rem;
+					}
+				}
+
+				.option-text {
+					text-align: left;
+					width: 22.5rem;
+
+					.option-title {
+						font-size: 1rem;
+						font-weight: bold;
+						color: $marine_blue;
+						margin-bottom: 0.313rem;
+					}
+
+					.option-description {
+						color: $cool_gray;
+					}
+				}
+
+				.option-price {
+					color: $purplis_blue;
+				}
+
+				&.selected {
+					background-color: $magnolia;
+					border-color: $purplis_blue;
+				}
+			}
+		}
+
+		.step4 {
+			.summarize {
+				height: 13.75rem;
+				margin-top: 1.25rem;
+				border: 0.125rem solid $alabaster;
+				border-radius: 0.65rem;
+				background-color: $alabaster;
+				padding: 1.25rem;
+
+				.plan-details {
+					display: flex;
+					justify-content: space-between;
+					align-content: center;
+					padding-bottom: 1.25rem;
+					font-size: 1.125rem;
+					color: $marine_blue;
+					border-bottom: 0.063rem solid $light_gray;
+
+					.plan-details-title {
+						font-weight: 600;
+
+						.change-button {
+							font-size: 1rem;
+							font-weight: normal;
+							color: $cool_gray;
+							padding: 0.313rem 0;
+							text-decoration: underline;
+							cursor: pointer;
+						}
+					}
+
+					.plan-details-price {
+						padding: 0.65rem 0;
+						font-weight: bold;
+					}
+				}
+
+				.add-ons-details {
+					padding-top: 0.65rem;
+
+					.add-on {
+						display: flex;
+						justify-content: space-between;
+						padding: 0.65rem 0;
+						color: $cool_gray;
+
+						.add-on-price {
+							color: $marine_blue;
+						}
+					}
+				}
+			}
+			.total-price {
+				display: flex;
+				justify-content: space-between;
+				padding: 1.25rem;
+
+				.title {
+					color: $cool_gray;
+					font-size: 1rem;
+				}
+
+				.price {
+					color: $purplis_blue;
+					font-size: 1.125rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.form-buttons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-top: 1.87rem;
+
+		button {
+			font-weight: bold;
+			height: 2.5rem;
+			padding: 0.65rem;
+			border: none;
+			cursor: pointer;
+		}
+
+		.submit {
+			background-color: $marine_blue;
+			color: $white;
+			border-radius: 0.313rem;
+
+			&:hover {
+				background-color: $purplis_blue;
+			}
+		}
+
+		.back {
+			background-color: transparent;
+			color: $cool_gray;
+
+			&:hover {
+				color: $marine_blue;
+			}
+		}
+
+		.back.invisible {
+			visibility: hidden;
+		}
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	//Desktop
+	.container {
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+	//Tablet
+	.container {
+	}
+}
+
+@media screen and (max-width: 375px) {
+	//Mobile
+	.container {
+	}
+}

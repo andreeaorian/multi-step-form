@@ -134,26 +134,17 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			gap: 1.25rem;
-			padding-bottom: 2.5rem;
-			margin-top: 1.25rem;
 
 			.extra-option {
-				height: 4.375rem;
-				padding: 0.65rem 1.25rem;
-				border: 0.063rem solid $light_gray;
 				border-radius: 0.313rem;
 				text-align: left;
 				background-color: $white;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				font-size: 0.875rem;
 
 				.option-checkbox {
 					appearance: none;
-					width: 1.25rem;
-					height: 1.25rem;
 					position: relative;
 					cursor: pointer;
 
@@ -161,10 +152,6 @@
 						content: "";
 						display: block;
 						position: absolute;
-						width: 1.25rem;
-						height: 1.25rem;
-						top: 0;
-						left: 0;
 						border: 0.063rem solid $light_gray;
 						border-radius: 0.313rem;
 						background-color: $white;
@@ -174,39 +161,24 @@
 						content: "";
 						display: block;
 						position: absolute;
-						width: 1.25rem;
-						height: 1.25rem;
-						top: 0;
-						left: 0;
 						background-color: $purplis_blue;
 						border: 0.063rem solid $purplis_blue;
 					}
 
 					&:checked::after {
 						content: "";
-						display: block;
-						width: 0.313rem;
-						height: 0.65rem;
 						border: solid $white;
-						border-width: 0 0.125rem 0.125rem 0;
-						-webkit-transform: rotate(45deg);
-						-ms-transform: rotate(45deg);
-						transform: rotate(45deg);
+						display: block;
 						position: absolute;
-						top: 0.188rem;
-						left: 0.5rem;
 					}
 				}
 
 				.option-text {
 					text-align: left;
-					width: 22.5rem;
 
 					.option-title {
-						font-size: 1rem;
 						font-weight: bold;
 						color: $marine_blue;
-						margin-bottom: 0.313rem;
 					}
 
 					.option-description {
@@ -389,7 +361,7 @@
 			}
 
 			.step2 {
-				padding: 1rem 0;
+				padding-top: 0.7rem;
 
 				.step2-plans {
 					flex-direction: column;
@@ -405,7 +377,7 @@
 						gap: 1rem;
 
 						.plan-icon {
-							margin-top: 0;
+							margin-top: 0.3rem;
 						}
 
 						.plan-content {
@@ -414,17 +386,17 @@
 
 							.plan-title {
 								padding-bottom: 0.25rem;
-								font-size: 0.75rem;
+								font-size: 0.875rem;
 							}
 
 							.plan-price {
 								padding-bottom: 0.25rem;
-								font-size: 0.625rem;
+								font-size: 0.75rem;
 							}
 
 							.plan-discount {
 								padding-bottom: 0.25rem;
-								font-size: 0.5rem;
+								font-size: 0.625rem;
 							}
 						}
 					}
@@ -490,6 +462,61 @@
 								transition: 0.4s;
 								border-radius: 50%;
 							}
+						}
+					}
+				}
+			}
+
+			.step3 {
+				gap: 1rem;
+				padding-bottom: 1rem;
+				margin-top: 1rem;
+
+				.extra-option {
+					height: 3.375rem;
+					padding: 0.65rem 1rem;
+					border: 0.063rem solid $light_gray;
+					font-size: 0.875rem;
+
+					.option-checkbox {
+						width: 1rem;
+						height: 1rem;
+
+						&::before {
+							width: 1rem;
+							height: 1rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::before {
+							width: 1rem;
+							height: 1rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::after {
+							-webkit-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							transform: rotate(45deg);
+							top: 0.1rem;
+							left: 0.35rem;
+							width: 0.3rem;
+							height: 0.6rem;
+							border-width: 0 0.125rem 0.125rem 0;
+						}
+					}
+
+					.option-text {
+						width: 9rem;
+
+						.option-title {
+							margin-bottom: 0.313rem;
+						}
+
+						.option-description {
+							font-size: 0.75rem;
 						}
 					}
 				}
@@ -705,6 +732,58 @@
 								transition: 0.4s;
 								border-radius: 50%;
 							}
+						}
+					}
+				}
+			}
+
+			.step3 {
+				gap: 1.25rem;
+				padding-bottom: 2.5rem;
+				margin-top: 1.25rem;
+
+				.extra-option {
+					height: 4.375rem;
+					padding: 0.65rem 1.25rem;
+					border: 0.063rem solid $light_gray;
+					font-size: 0.875rem;
+
+					.option-checkbox {
+						width: 1.25rem;
+						height: 1.25rem;
+
+						&::before {
+							width: 1.25rem;
+							height: 1.25rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::before {
+							width: 1.25rem;
+							height: 1.25rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::after {
+							-webkit-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							transform: rotate(45deg);
+							top: 0.188rem;
+							left: 0.5rem;
+							width: 0.313rem;
+							height: 0.65rem;
+							border-width: 0 0.125rem 0.125rem 0;
+						}
+					}
+
+					.option-text {
+						width: 22.5rem;
+
+						.option-title {
+							font-size: 1rem;
+							margin-bottom: 0.313rem;
 						}
 					}
 				}

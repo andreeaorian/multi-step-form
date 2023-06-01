@@ -12,26 +12,19 @@
 		background-color: $white;
 		border-radius: 0.65rem;
 		padding: 0.65rem;
+	}
 
-		.confirmation-message {
-			width: 43.7rem;
-			padding: 6.25rem;
-			padding-top: 9.375rem;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
+	.confirmation-message {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 
-			.confirmation-title {
-				padding: 0.65rem 1.25rem;
-				color: $marine_blue;
-			}
+		.confirmation-title {
+			color: $marine_blue;
+		}
 
-			.confirmation-details {
-				font-size: 1.125rem;
-				color: $cool_gray;
-				padding: 0 0.65rem;
-				line-height: 1.56rem;
-			}
+		.confirmation-details {
+			color: $cool_gray;
 		}
 	}
 
@@ -45,6 +38,30 @@
 	.app {
 		width: 100%;
 		height: 100vh;
+
+		.confirmation-message {
+			width: 19rem;
+			position: absolute;
+			top: 6rem;
+			left: 2rem;
+			background-color: $white;
+			padding: 3rem 1.5rem;
+			border-radius: 0.65rem;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			.confirmation-title {
+				font-size: 1.125rem;
+				padding: 0.65rem 1.25rem;
+			}
+
+			.confirmation-details {
+				font-size: 0.875rem;
+				padding: 0 0.65rem;
+				line-height: 1.2rem;
+			}
+		}
 	}
 }
 
@@ -57,6 +74,22 @@
 		.container {
 			min-width: 56rem;
 			min-height: 36.8rem;
+
+			.confirmation-message {
+				width: 43.7rem;
+				padding: 6.25rem;
+				padding-top: 9.375rem;
+
+				.confirmation-title {
+					padding: 0.65rem 1.25rem;
+				}
+
+				.confirmation-details {
+					font-size: 1.125rem;
+					padding: 0 0.65rem;
+					line-height: 1.56rem;
+				}
+			}
 		}
 	}
 }
@@ -70,6 +103,22 @@
 		.container {
 			min-width: 56rem;
 			min-height: 36.8rem;
+		}
+
+		.confirmation-message {
+			width: 43.7rem;
+			padding: 6.25rem;
+			padding-top: 9.375rem;
+
+			.confirmation-title {
+				padding: 0.65rem 1.25rem;
+			}
+
+			.confirmation-details {
+				font-size: 1.125rem;
+				padding: 0 0.65rem;
+				line-height: 1.56rem;
+			}
 		}
 	}
 }

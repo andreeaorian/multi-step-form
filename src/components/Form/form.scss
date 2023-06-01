@@ -199,48 +199,36 @@
 
 		.step4 {
 			.summarize {
-				height: 13.75rem;
-				margin-top: 1.25rem;
-				border: 0.125rem solid $alabaster;
-				border-radius: 0.65rem;
+				height: auto;
 				background-color: $alabaster;
-				padding: 1.25rem;
+				border-radius: 0.65rem;
+				border: 0.125rem solid $alabaster;
 
 				.plan-details {
 					display: flex;
 					justify-content: space-between;
 					align-content: center;
-					padding-bottom: 1.25rem;
-					font-size: 1.125rem;
 					color: $marine_blue;
 					border-bottom: 0.063rem solid $light_gray;
 
 					.plan-details-title {
-						font-weight: 600;
-
 						.change-button {
-							font-size: 1rem;
 							font-weight: normal;
 							color: $cool_gray;
-							padding: 0.313rem 0;
 							text-decoration: underline;
 							cursor: pointer;
 						}
 					}
 
 					.plan-details-price {
-						padding: 0.65rem 0;
 						font-weight: bold;
 					}
 				}
 
 				.add-ons-details {
-					padding-top: 0.65rem;
-
 					.add-on {
 						display: flex;
 						justify-content: space-between;
-						padding: 0.65rem 0;
 						color: $cool_gray;
 
 						.add-on-price {
@@ -249,19 +237,17 @@
 					}
 				}
 			}
+
 			.total-price {
 				display: flex;
 				justify-content: space-between;
-				padding: 1.25rem;
 
 				.title {
 					color: $cool_gray;
-					font-size: 1rem;
 				}
 
 				.price {
 					color: $purplis_blue;
-					font-size: 1.125rem;
 					font-weight: bold;
 				}
 			}
@@ -518,6 +504,51 @@
 						.option-description {
 							font-size: 0.75rem;
 						}
+					}
+				}
+			}
+
+			.step4 {
+				.summarize {
+					margin-top: 1rem;
+					padding: 1rem;
+
+					.plan-details {
+						padding-bottom: 0.65rem;
+						font-size: 0.875rem;
+
+						.plan-details-title {
+							font-weight: 600;
+
+							.change-button {
+								font-size: 0.75rem;
+								padding: 0.313rem 0;
+							}
+						}
+
+						.plan-details-price {
+							padding: 0.65rem 0;
+						}
+					}
+
+					.add-ons-details {
+						padding-top: 0.35rem;
+
+						.add-on {
+							padding-top: 0.65rem;
+						}
+					}
+				}
+
+				.total-price {
+					padding: 0.8rem 1rem;
+
+					.title {
+						font-size: 0.875rem;
+					}
+
+					.price {
+						font-size: 0.9rem;
 					}
 				}
 			}
@@ -785,6 +816,51 @@
 							font-size: 1rem;
 							margin-bottom: 0.313rem;
 						}
+					}
+				}
+			}
+
+			.step4 {
+				.summarize {
+					margin-top: 1.25rem;
+					padding: 1.25rem;
+
+					.plan-details {
+						padding-bottom: 1.25rem;
+						font-size: 1.125rem;
+
+						.plan-details-title {
+							font-weight: 600;
+
+							.change-button {
+								font-size: 1rem;
+								padding: 0.313rem 0;
+							}
+						}
+
+						.plan-details-price {
+							padding: 0.65rem 0;
+						}
+					}
+
+					.add-ons-details {
+						padding-top: 0.65rem;
+
+						.add-on {
+							padding: 0.65rem 0;
+						}
+					}
+				}
+
+				.total-price {
+					padding: 1.25rem;
+
+					.title {
+						font-size: 1rem;
+					}
+
+					.price {
+						font-size: 1.125rem;
 					}
 				}
 			}

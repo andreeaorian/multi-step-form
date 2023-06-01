@@ -64,7 +64,7 @@ export default function FormButtons({ isBackVisible, isConfirm }) {
 					Confirm
 				</button>
 			) : (
-				<button type="button" className="submit" onClick={saveAndGoToNextStep}>
+				<button type="button" onClick={saveAndGoToNextStep}>
 					Next Step
 				</button>
 			)}

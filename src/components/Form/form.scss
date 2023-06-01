@@ -305,16 +305,17 @@
 			font-weight: bold;
 			border: none;
 			cursor: pointer;
-		}
-
-		.submit {
 			background-color: $marine_blue;
 			color: $white;
 			border-radius: 0.313rem;
 
 			&:hover {
-				background-color: $purplis_blue;
+				opacity: 80%;
 			}
+		}
+
+		.submit {
+			background-color: $purplis_blue;
 		}
 
 		.back {
@@ -322,6 +323,7 @@
 			color: $cool_gray;
 
 			&:hover {
+				opacity: 100%;
 				color: $marine_blue;
 			}
 		}

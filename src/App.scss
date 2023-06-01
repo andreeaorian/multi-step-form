@@ -68,27 +68,30 @@
 @media screen and (min-width: 376px) and (max-width: 768px) {
 	//Tablet
 	.app {
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 
-		.container {
-			min-width: 56rem;
-			min-height: 36.8rem;
+		.confirmation-message {
+			width: 28rem;
+			position: absolute;
+			top: 5rem;
+			left: 8rem;
+			background-color: $white;
+			padding: 3rem 1.5rem;
+			border-radius: 0.65rem;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 
-			.confirmation-message {
-				width: 43.7rem;
-				padding: 6.25rem;
-				padding-top: 9.375rem;
+			.confirmation-title {
+				font-size: 1.125rem;
+				padding: 0.65rem 1.25rem;
+			}
 
-				.confirmation-title {
-					padding: 0.65rem 1.25rem;
-				}
-
-				.confirmation-details {
-					font-size: 1.125rem;
-					padding: 0 0.65rem;
-					line-height: 1.56rem;
-				}
+			.confirmation-details {
+				font-size: 0.875rem;
+				padding: 0 0.65rem;
+				line-height: 1.2rem;
 			}
 		}
 	}

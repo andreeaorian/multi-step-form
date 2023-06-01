@@ -80,30 +80,36 @@
 @media screen and (min-width: 376px) and (max-width: 768px) {
 	//Tablet
 	.sidebar {
-		background: url("../../assets/img/bg-sidebar-desktop.svg") no-repeat 100%
-			100%;
-		width: 17rem;
-		height: 35.6rem;
+		background: url("../../assets/img/bg-sidebar-mobile.svg") no-repeat center
+			center;
+		background-size: cover;
+		width: 100vw;
+		height: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 1rem;
+		flex-direction: row;
+		justify-content: center;
 
 		.step-button {
-			height: 3rem;
-			margin: 0 2.5rem;
+			height: 2rem;
+			margin: 0;
 
 			.step-index {
-				width: 1.87rem;
-				height: 1.87rem;
-				border: 0.125rem solid $light_blue;
+				width: 1.7rem;
+				height: 1.7rem;
+				border: 0.12rem solid hsl(206, 94%, 87%);
 				margin-right: 0.65rem;
-				line-height: 1.87rem;
+				line-height: 1.5rem;
 			}
 
 			.step-number {
-				margin: 0 0.313rem;
+				display: none;
 			}
 
 			.step-title {
-				margin: 0 0.313rem;
-				width: 7.2rem;
+				display: none;
 			}
 		}
 	}

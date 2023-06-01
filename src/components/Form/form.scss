@@ -574,52 +574,277 @@
 @media screen and (min-width: 376px) and (max-width: 768px) {
 	//Tablet
 	.form {
-		width: 43.7rem;
-		padding: 1.25rem 6.25rem;
+		width: 28rem;
+		position: absolute;
+		top: 5rem;
+		left: 8rem;
+		background-color: $white;
+		padding: 1rem 1.25rem;
+		border-radius: 0.65rem;
 
 		.form-title {
-			padding: 0.313rem;
+			padding: 0 0.313rem;
 
 			h1 {
-				margin-bottom: 0.65rem;
+				margin: 0;
+				margin-bottom: 0.5rem;
+				font-size: 1.125rem;
+			}
+
+			span {
+				font-size: 0.75rem;
 			}
 		}
 
 		.form-content {
-			height: 22.5rem;
+			height: auto;
+			font-size: 0.75rem;
 
 			.step1 {
-				gap: 1.25rem;
-				padding: 1.87rem 0;
+				gap: 0.25rem;
+				padding: 1rem 0;
 
 				.group {
-					padding: 0.65rem 0;
+					padding: 0.35rem 0;
 
 					.label-error {
 						padding: 0 0.313rem;
 
 						.error {
-							font-size: 0.875rem;
+							font-size: 0.75rem;
 						}
 					}
 
 					input {
 						width: 100%;
-						height: 2.5rem;
-						margin-top: 0.5rem;
+						height: 1.8rem;
+						margin-top: 0.25rem;
 						border-radius: 0.313rem;
-						padding: 0.65rem;
+						padding: 0.35rem 0.45rem;
+					}
+				}
+			}
+
+			.step2 {
+				padding-top: 0.7rem;
+
+				.step2-plans {
+					flex-direction: column;
+					gap: 0.5rem;
+
+					.plan-box {
+						padding: 0.45rem 1.25rem;
+						border: 0.063rem solid $light_gray;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						align-content: center;
+						gap: 1rem;
+
+						.plan-icon {
+							margin-top: 0.3rem;
+						}
+
+						.plan-content {
+							display: flex;
+							flex-direction: column;
+
+							.plan-title {
+								padding-bottom: 0.25rem;
+								font-size: 0.875rem;
+							}
+
+							.plan-price {
+								padding-bottom: 0.25rem;
+								font-size: 0.75rem;
+							}
+
+							.plan-discount {
+								padding-bottom: 0.25rem;
+								font-size: 0.625rem;
+							}
+						}
+					}
+				}
+
+				.step2-billing {
+					height: 2rem;
+					margin-top: 1rem;
+					border: 0.063rem solid $magnolia;
+
+					.billing-toggle {
+						width: 2rem;
+						height: 1rem;
+
+						.billing-monthly {
+							font-size: 0.75rem;
+							position: absolute;
+							top: 0.188rem;
+							left: -3.75rem;
+						}
+
+						.billing-yearly {
+							position: absolute;
+							top: 0.188rem;
+							right: -3rem;
+							font-weight: bold;
+							font-size: 0.75rem;
+						}
+
+						.billing-toggle-input {
+							display: none;
+
+							&:checked + .billing-toggle-handler {
+								&::before {
+									-webkit-transform: translateX(0.8rem);
+									-ms-transform: translateX(0.8rem);
+									transform: translateX(0.8rem);
+								}
+							}
+						}
+
+						.billing-toggle-handler {
+							position: absolute;
+							cursor: pointer;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							background-color: $marine_blue;
+							-webkit-transition: 0.4s;
+							transition: 0.4s;
+							border-radius: 2.125rem;
+
+							&::before {
+								position: absolute;
+								content: "";
+								height: 0.8rem;
+								width: 0.8rem;
+								left: 0.25rem;
+								bottom: 0.1rem;
+								background-color: $white;
+								-webkit-transition: 0.4s;
+								transition: 0.4s;
+								border-radius: 50%;
+							}
+						}
+					}
+				}
+			}
+
+			.step3 {
+				gap: 1rem;
+				padding-bottom: 1rem;
+				margin-top: 1rem;
+
+				.extra-option {
+					height: 3.375rem;
+					padding: 0.65rem 1rem;
+					border: 0.063rem solid $light_gray;
+					font-size: 0.875rem;
+
+					.option-checkbox {
+						width: 1rem;
+						height: 1rem;
+
+						&::before {
+							width: 1rem;
+							height: 1rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::before {
+							width: 1rem;
+							height: 1rem;
+							top: 0;
+							left: 0;
+						}
+
+						&:checked::after {
+							-webkit-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							transform: rotate(45deg);
+							top: 0.1rem;
+							left: 0.35rem;
+							width: 0.3rem;
+							height: 0.6rem;
+							border-width: 0 0.125rem 0.125rem 0;
+						}
+					}
+
+					.option-text {
+						width: 9rem;
+
+						.option-title {
+							margin-bottom: 0.313rem;
+						}
+
+						.option-description {
+							font-size: 0.75rem;
+						}
+					}
+				}
+			}
+
+			.step4 {
+				.summarize {
+					margin-top: 1rem;
+					padding: 1rem;
+
+					.plan-details {
+						padding-bottom: 0.65rem;
+						font-size: 0.875rem;
+
+						.plan-details-title {
+							font-weight: 600;
+
+							.change-button {
+								font-size: 0.75rem;
+								padding: 0.313rem 0;
+							}
+						}
+
+						.plan-details-price {
+							padding: 0.65rem 0;
+						}
+					}
+
+					.add-ons-details {
+						padding-top: 0.35rem;
+
+						.add-on {
+							padding-top: 0.65rem;
+						}
+					}
+				}
+
+				.total-price {
+					padding: 0.8rem 1rem;
+
+					.title {
+						font-size: 0.875rem;
+					}
+
+					.price {
+						font-size: 0.9rem;
 					}
 				}
 			}
 		}
 
 		.form-buttons {
-			padding-top: 1.87rem;
+			background-color: $white;
+			padding: 0.87rem 2rem;
+			position: fixed;
+			bottom: 0;
+			width: 100vw;
+			left: 0;
 
 			button {
-				height: 2.5rem;
-				padding: 0.65rem;
+				height: 1.7rem;
+				font-size: 0.75rem;
+				padding: 0.35rem;
 			}
 		}
 	}

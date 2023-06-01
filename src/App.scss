@@ -3,8 +3,6 @@
 @import "./components/form/form.scss";
 
 .app {
-	width: 100vw;
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,8 +12,6 @@
 		background-color: $white;
 		border-radius: 0.65rem;
 		padding: 0.65rem;
-		min-width: 56rem;
-		height: 36.8rem;
 
 		.confirmation-message {
 			width: 43.7rem;
@@ -37,27 +33,43 @@
 				line-height: 1.56rem;
 			}
 		}
-
-		.hidden {
-			display: none;
-		}
 	}
-}
 
-@media screen and (max-width: 1440px) {
-	//Desktop
-	.container {
-	}
-}
-
-@media screen and (min-width: 376px) and (max-width: 768px) {
-	//Tablet
-	.container {
+	.hidden {
+		display: none;
 	}
 }
 
 @media screen and (max-width: 375px) {
 	//Mobile
-	.container {
+	.app {
+		width: 100%;
+		height: 100vh;
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+	//Tablet
+	.app {
+		width: 100vw;
+		height: 100vh;
+
+		.container {
+			min-width: 56rem;
+			min-height: 36.8rem;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+	//Desktop
+	.app {
+		width: 100vw;
+		height: 100vh;
+
+		.container {
+			min-width: 56rem;
+			min-height: 36.8rem;
+		}
 	}
 }

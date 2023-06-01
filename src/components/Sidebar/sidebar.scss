@@ -1,9 +1,6 @@
 @import "../../assets/scss/variables.scss";
 
 .sidebar {
-	background: url("../../assets/img/bg-sidebar-desktop.svg") no-repeat 100% 100%;
-	width: 17rem;
-	height: 35.6rem;
 	padding-top: 1.87rem;
 	display: flex;
 	flex-direction: column;
@@ -16,20 +13,13 @@
 			"index  title";
 		justify-content: flex-start;
 		align-items: center;
-		height: 3rem;
-		margin: 0 2.5rem;
 		color: $white;
 
 		.step-index {
 			grid-area: index;
-			width: 1.87rem;
-			height: 1.87rem;
 			border-radius: 50%;
-			border: 0.125rem solid $light_blue;
 			font-weight: bold;
-			margin-right: 0.65rem;
 			text-align: center;
-			line-height: 1.87rem;
 		}
 
 		.step-index.active {
@@ -40,33 +30,112 @@
 		.step-number {
 			grid-area: number;
 			text-align: left;
-			margin: 0 0.313rem;
 		}
 
 		.step-title {
 			grid-area: title;
 			text-transform: uppercase;
 			font-weight: bold;
-			margin: 0 0.313rem;
-			width: 7.2rem;
 		}
-	}
-}
-
-@media screen and (max-width: 1440px) {
-	//Desktop
-	.container {
-	}
-}
-
-@media screen and (min-width: 376px) and (max-width: 768px) {
-	//Tablet
-	.container {
 	}
 }
 
 @media screen and (max-width: 375px) {
 	//Mobile
-	.container {
+	.sidebar {
+		background: url("../../assets/img/bg-sidebar-mobile.svg") no-repeat 100%
+			100%;
+		width: 100vw;
+		height: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		flex-direction: row;
+		justify-content: center;
+
+		.step-button {
+			height: 2rem;
+			margin: 0;
+
+			.step-index {
+				width: 1.7rem;
+				height: 1.7rem;
+				border: 0.12rem solid hsl(206, 94%, 87%);
+				margin-right: 0.65rem;
+				line-height: 1.5rem;
+			}
+
+			.step-number {
+				display: none;
+			}
+
+			.step-title {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+	//Tablet
+	.sidebar {
+		background: url("../../assets/img/bg-sidebar-desktop.svg") no-repeat 100%
+			100%;
+		width: 17rem;
+		height: 35.6rem;
+
+		.step-button {
+			height: 3rem;
+			margin: 0 2.5rem;
+
+			.step-index {
+				width: 1.87rem;
+				height: 1.87rem;
+				border: 0.125rem solid $light_blue;
+				margin-right: 0.65rem;
+				line-height: 1.87rem;
+			}
+
+			.step-number {
+				margin: 0 0.313rem;
+			}
+
+			.step-title {
+				margin: 0 0.313rem;
+				width: 7.2rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+	//Desktop
+	.sidebar {
+		background: url("../../assets/img/bg-sidebar-desktop.svg") no-repeat 100%
+			100%;
+		width: 17rem;
+		height: 35.6rem;
+
+		.step-button {
+			height: 3rem;
+			margin: 0 2.5rem;
+
+			.step-index {
+				width: 1.87rem;
+				height: 1.87rem;
+				border: 0.125rem solid $light_blue;
+				margin-right: 0.65rem;
+				line-height: 1.87rem;
+			}
+
+			.step-number {
+				margin: 0 0.313rem;
+			}
+
+			.step-title {
+				margin: 0 0.313rem;
+				width: 7.2rem;
+			}
+		}
 	}
 }

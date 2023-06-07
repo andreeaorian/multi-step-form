@@ -35,17 +35,17 @@ export default function Form() {
 	const { stepIndex } = useContext(StepContext);
 	const { isConfirmed } = useContext(FormDataContext);
 	const titleOject = formTitles.find((x) => x.id === stepIndex);
-	return (
-		<>
-			<div className={`form ${isConfirmed ? "hidden" : ""}`}>
-				<FormTitle title={titleOject.title} subtitle={titleOject.subtitle} />
-				<FormContent />
-				<FormButtons
-					isBackVisible={stepIndex !== 1}
-					isConfirm={stepIndex === 4}
-				/>
-			</div>
-			<ConfirmationMessage />
-		</>
+
+	return isConfirmed ? (
+		<ConfirmationMessage />
+	) : (
+		<div className="form">
+			<FormTitle title={titleOject.title} subtitle={titleOject.subtitle} />
+			<FormContent />
+			<FormButtons
+				isBackVisible={stepIndex !== 1}
+				isConfirm={stepIndex === 4}
+			/>
+		</div>
 	);
 }

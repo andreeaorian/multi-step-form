@@ -1,16 +1,14 @@
-import { useContext } from "react";
-import { FormDataContext } from "../../../context/formDataContext";
+import React from "react";
 import useDisplaySize from "../../../hooks/useDisplaySize";
 
 import { ReactComponent as ThankYouIcon } from "../../../assets/img/icon-thank-you.svg";
 
-export default function ConfirmationMessage() {
-	const { isConfirmed } = useContext(FormDataContext);
+function ConfirmationMessage() {
 	const isMobile = useDisplaySize();
 	const imageSize = isMobile ? 40 : 80;
 
 	return (
-		<div className={`confirmation-message ${isConfirmed ? "" : "hidden"}`}>
+		<div className="confirmation-message">
 			<ThankYouIcon width={imageSize} height={imageSize} />
 			<h1 className="confirmation-title"> Thank you!</h1>
 			<div className="confirmation-details">
@@ -21,3 +19,5 @@ export default function ConfirmationMessage() {
 		</div>
 	);
 }
+
+export default React.memo(ConfirmationMessage);

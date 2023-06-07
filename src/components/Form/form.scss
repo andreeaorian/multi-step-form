@@ -1,7 +1,6 @@
 @import "../../assets/scss/variables.scss";
 
 .form {
-	justify-content: center;
 	color: $marine_blue;
 	display: flex;
 	flex-direction: column;
@@ -70,6 +69,7 @@
 					text-align: left;
 					border-radius: 0.65rem;
 					background-color: $white;
+					border: 0.063rem solid $light_gray;
 					cursor: pointer;
 
 					.plan-title {
@@ -95,6 +95,7 @@
 			.step2-billing {
 				border-radius: 0.313rem;
 				background-color: $magnolia;
+				border: 0.063rem solid $magnolia;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -137,6 +138,7 @@
 
 			.extra-option {
 				border-radius: 0.313rem;
+				border: 0.063rem solid $light_gray;
 				text-align: left;
 				background-color: $white;
 				display: flex;
@@ -355,7 +357,6 @@
 
 					.plan-box {
 						padding: 0.45rem 1.25rem;
-						border: 0.063rem solid $light_gray;
 						display: flex;
 						flex-direction: row;
 						justify-content: flex-start;
@@ -391,7 +392,6 @@
 				.step2-billing {
 					height: 2rem;
 					margin-top: 1rem;
-					border: 0.063rem solid $magnolia;
 
 					.billing-toggle {
 						width: 2rem;
@@ -461,23 +461,18 @@
 				.extra-option {
 					height: 3.375rem;
 					padding: 0.65rem 1rem;
-					border: 0.063rem solid $light_gray;
 					font-size: 0.875rem;
 
-					.option-checkbox {
+					.option-checkbox,
+					.option-checkbox::before,
+					.option-checkbox:checked::before {
 						width: 1rem;
 						height: 1rem;
+					}
 
-						&::before {
-							width: 1rem;
-							height: 1rem;
-							top: 0;
-							left: 0;
-						}
-
+					.option-checkbox {
+						&::before,
 						&:checked::before {
-							width: 1rem;
-							height: 1rem;
 							top: 0;
 							left: 0;
 						}
@@ -634,7 +629,6 @@
 
 					.plan-box {
 						padding: 0.45rem 1.25rem;
-						border: 0.063rem solid $light_gray;
 						display: flex;
 						flex-direction: row;
 						justify-content: flex-start;
@@ -649,18 +643,21 @@
 							display: flex;
 							flex-direction: column;
 
-							.plan-title {
+							.plan-title,
+							.plan-price,
+							.plan-discount {
 								padding-bottom: 0.25rem;
+							}
+
+							.plan-title {
 								font-size: 0.875rem;
 							}
 
 							.plan-price {
-								padding-bottom: 0.25rem;
 								font-size: 0.75rem;
 							}
 
 							.plan-discount {
-								padding-bottom: 0.25rem;
 								font-size: 0.625rem;
 							}
 						}
@@ -670,7 +667,6 @@
 				.step2-billing {
 					height: 2rem;
 					margin-top: 1rem;
-					border: 0.063rem solid $magnolia;
 
 					.billing-toggle {
 						width: 2rem;
@@ -740,23 +736,18 @@
 				.extra-option {
 					height: 3.375rem;
 					padding: 0.65rem 1rem;
-					border: 0.063rem solid $light_gray;
 					font-size: 0.875rem;
 
-					.option-checkbox {
+					.option-checkbox,
+					.option-checkbox::before,
+					.option-checkbox:checked::before {
 						width: 1rem;
 						height: 1rem;
+					}
 
-						&::before {
-							width: 1rem;
-							height: 1rem;
-							top: 0;
-							left: 0;
-						}
-
+					.option-checkbox {
+						&::before,
 						&:checked::before {
-							width: 1rem;
-							height: 1rem;
 							top: 0;
 							left: 0;
 						}
@@ -901,9 +892,6 @@
 					.plan-box {
 						margin: 1.25rem 0;
 						padding: 0.65rem 1.25rem;
-
-						border: 0.063rem solid $light_gray;
-
 						width: 15.6rem;
 
 						.plan-icon {
@@ -916,13 +904,16 @@
 							font-size: 1.125rem;
 						}
 
-						.plan-price {
+						.plan-price,
+						.plan-discount {
 							padding-bottom: 0.65rem;
+						}
+
+						.plan-price {
 							font-size: 1rem;
 						}
 
 						.plan-discount {
-							padding-bottom: 0.65rem;
 							font-size: 0.875rem;
 						}
 					}
@@ -931,7 +922,6 @@
 				.step2-billing {
 					height: 3rem;
 					margin: 1.25rem 0;
-					border: 0.063rem solid $magnolia;
 
 					.billing-toggle {
 						width: 3rem;
@@ -1001,23 +991,18 @@
 				.extra-option {
 					height: 4.375rem;
 					padding: 0.65rem 1.25rem;
-					border: 0.063rem solid $light_gray;
 					font-size: 0.875rem;
 
-					.option-checkbox {
+					.option-checkbox,
+					.option-checkbox::before,
+					.option-checkbox:checked::before {
 						width: 1.25rem;
 						height: 1.25rem;
+					}
 
-						&::before {
-							width: 1.25rem;
-							height: 1.25rem;
-							top: 0;
-							left: 0;
-						}
-
+					.option-checkbox {
+						&::before,
 						&:checked::before {
-							width: 1.25rem;
-							height: 1.25rem;
 							top: 0;
 							left: 0;
 						}

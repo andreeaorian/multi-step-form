@@ -1,8 +1,6 @@
 import { createContext, useReducer } from "react";
 
-const initialState = {
-	stepIndex: 1,
-};
+const initialState = 1;
 
 const actions = {
 	INCREASE_STEP: "INCREASE_STEP",
@@ -13,21 +11,12 @@ const actions = {
 const reducer = (state, action) => {
 	switch (action.type) {
 		case actions.INCREASE_STEP:
-			return {
-				...state,
-				stepIndex: state.stepIndex + 1,
-			};
+			return state + 1;
 		case actions.DECREASE_STEP:
-			return {
-				...state,
-				stepIndex: state.stepIndex - 1,
-			};
+			return state - 1;
 
 		case actions.CHANGE_STEP:
-			return {
-				...state,
-				stepIndex: action.payload,
-			};
+			return action.payload;
 		default:
 			return state;
 	}
@@ -39,7 +28,7 @@ export const StepContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	const value = {
-		stepIndex: state.stepIndex,
+		stepIndex: state,
 		increaseStep: () => {
 			dispatch({ type: actions.INCREASE_STEP });
 		},

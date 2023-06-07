@@ -83,6 +83,15 @@ export const FormDataContextProvider = ({ children }) => {
 		confirm: () => {
 			dispatch({ type: actions.CONFIRM });
 		},
+		calculateTotalPrice: () => {
+			let totalPrice = state.price;
+
+			state.addOns.forEach((x) => {
+				totalPrice += state.yearlyBilling ? x.yearlyPrice : x.monthlyPrice;
+			});
+
+			return totalPrice;
+		},
 	};
 
 	return (

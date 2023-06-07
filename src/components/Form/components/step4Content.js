@@ -3,20 +3,10 @@ import { FormDataContext } from "../../../context/formDataContext";
 import { StepContext } from "../../../context/stepContext";
 
 export default function Step4Content() {
-	const { planType, price, yearlyBilling, addOns } =
+	const { planType, price, yearlyBilling, addOns, calculateTotalPrice } =
 		useContext(FormDataContext);
 	const { changeStep } = useContext(StepContext);
 	const priceDisplay = `/${yearlyBilling ? "yr" : "mo"}`;
-
-	const calculateTotalPrice = () => {
-		let totalPrice = price;
-
-		addOns.forEach((x) => {
-			totalPrice += yearlyBilling ? x.yearlyPrice : x.monthlyPrice;
-		});
-
-		return totalPrice;
-	};
 
 	const goToPlanStep = () => {
 		changeStep(2);

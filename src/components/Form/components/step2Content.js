@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import PlanBox from "./planBox";
-import { FormDataContext } from "../../context/formDataContext";
+import { FormDataContext } from "../../../context/formDataContext";
 
-import { ReactComponent as ArcadeIcon } from "../../assets/img/icon-arcade.svg";
-import { ReactComponent as AdvancedIcon } from "../../assets/img/icon-advanced.svg";
-import { ReactComponent as ProIcon } from "../../assets/img/icon-pro.svg";
+import { ReactComponent as ArcadeIcon } from "../../../assets/img/icon-arcade.svg";
+import { ReactComponent as AdvancedIcon } from "../../../assets/img/icon-advanced.svg";
+import { ReactComponent as ProIcon } from "../../../assets/img/icon-pro.svg";
 
 const arcadePlan = {
 	title: "Arcade",

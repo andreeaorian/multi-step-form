@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StepContext } from "../../context/stepContext";
+import { StepContext } from "../../../context/stepContext";
 import Step1Content from "./step1Content";
 import Step2Content from "./step2Content";
 import Step3Content from "./step3Content";

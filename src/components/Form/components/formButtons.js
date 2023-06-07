@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../context/formDataContext";
-import { StepContext } from "../../context/stepContext";
+import { FormDataContext } from "../../../context/formDataContext";
+import { StepContext } from "../../../context/stepContext";
 
 export default function FormButtons({ isBackVisible, isConfirm }) {
 	const { stepIndex, increaseStep, decreaseStep } = useContext(StepContext);

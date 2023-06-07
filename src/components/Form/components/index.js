@@ -1,0 +1,11 @@
+export { default as ConfirmationMessage } from "./confirmationMessage";
+export { default as ExtraOption } from "./extraOption";
+export { default as FormButtons } from "./formButtons";
+export { default as FormInput } from "./formInput";
+export { default as FormTitle } from "./formTitle";
+export { default as FormContent } from "./formContent";
+export { default as PlanBox } from "./planBox";
+export { default as Step1Content } from "./step1Content";
+export { default as Step2Content } from "./step2Content";
+export { default as Step3Content } from "./step3Content";
+export { default as Step4Content } from "./step4Content";

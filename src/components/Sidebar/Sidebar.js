@@ -1,4 +1,4 @@
-import StepButton from "./stepButton";
+import StepButton from "./components/stepButton";
 
 export default function Sidebar() {
 	return (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StepContext } from "../../context/stepContext";
+import { StepContext } from "../../../context/stepContext";
 
 export default function StepButton({ step, title }) {
 	const { stepIndex } = useContext(StepContext);

@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../context/formDataContext";
 import { StepContext } from "../../context/stepContext";
-import ConfirmationMessage from "./confirmationMessage";
-import FormButtons from "./formButtons";
-import FormContent from "./formContent";
-import FormTitle from "./formTitle";
+import {
+	ConfirmationMessage,
+	FormButtons,
+	FormContent,
+	FormTitle,
+} from "./components";
 
 const formTitles = [
 	{

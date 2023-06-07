@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../context/formDataContext";
+import { FormDataContext } from "../../../context/formDataContext";
 import FormInput from "./formInput";
 
 export default function Step1Content() {

@@ -1,4 +1,4 @@
-import useDisplaySize from "../../hooks/useDisplaySize";
+import useDisplaySize from "../../../hooks/useDisplaySize";
 
 export default function PlanBox({
 	icon: Icon,

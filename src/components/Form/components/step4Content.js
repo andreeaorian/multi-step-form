@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { FormDataContext } from "../../context/formDataContext";
-import { StepContext } from "../../context/stepContext";
+import { FormDataContext } from "../../../context/formDataContext";
+import { StepContext } from "../../../context/stepContext";
 
 export default function Step4Content() {
 	const { planType, price, yearlyBilling, addOns } =

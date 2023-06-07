@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../context/formDataContext";
-import useDisplaySize from "../../hooks/useDisplaySize";
+import { FormDataContext } from "../../../context/formDataContext";
+import useDisplaySize from "../../../hooks/useDisplaySize";
 
-import { ReactComponent as ThankYouIcon } from "../../assets/img/icon-thank-you.svg";
+import { ReactComponent as ThankYouIcon } from "../../../assets/img/icon-thank-you.svg";
 
 export default function ConfirmationMessage() {
 	const { isConfirmed } = useContext(FormDataContext);

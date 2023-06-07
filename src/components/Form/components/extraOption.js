@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FormDataContext } from "../../context/formDataContext";
+import { FormDataContext } from "../../../context/formDataContext";
 
 export default function ExtraOption({ title, description, price, select }) {
 	const { yearlyBilling, addOns } = useContext(FormDataContext);

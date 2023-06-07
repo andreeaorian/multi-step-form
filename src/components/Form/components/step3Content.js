@@ -2,25 +2,26 @@ import React, { useContext } from "react";
 import { FormDataContext } from "../../../context/formDataContext";
 import ExtraOption from "./extraOption";
 
-const onlineService = {
-	title: "Online sevice",
-	description: "Access to multiplayer games",
-	monthlyPrice: 1,
-	yearlyPrice: 10,
-};
-const largerStorage = {
-	title: "Larger storage",
-	description: "Extra 1TB of cloud save",
-	monthlyPrice: 2,
-	yearlyPrice: 20,
-};
-const customizableProfile = {
-	title: "Customizable profile",
-	description: "Custom theme on your profile",
-	monthlyPrice: 2,
-	yearlyPrice: 20,
-};
-const allOptions = [onlineService, largerStorage, customizableProfile];
+const allOptions = [
+	{
+		title: "Online sevice",
+		description: "Access to multiplayer games",
+		monthlyPrice: 1,
+		yearlyPrice: 10,
+	},
+	{
+		title: "Larger storage",
+		description: "Extra 1TB of cloud save",
+		monthlyPrice: 2,
+		yearlyPrice: 20,
+	},
+	{
+		title: "Customizable profile",
+		description: "Custom theme on your profile",
+		monthlyPrice: 2,
+		yearlyPrice: 20,
+	},
+];
 
 export default function Step3Content() {
 	const { yearlyBilling, addOns, setAddOns } = useContext(FormDataContext);
@@ -37,32 +38,17 @@ export default function Step3Content() {
 
 	return (
 		<div className="step3">
-			<ExtraOption
-				title={onlineService.title}
-				description={onlineService.description}
-				price={
-					yearlyBilling ? onlineService.yearlyPrice : onlineService.monthlyPrice
-				}
-				select={() => selectOption(onlineService.title)}
-			/>
-			<ExtraOption
-				title={largerStorage.title}
-				description={largerStorage.description}
-				price={
-					yearlyBilling ? largerStorage.yearlyPrice : largerStorage.monthlyPrice
-				}
-				select={() => selectOption(largerStorage.title)}
-			/>
-			<ExtraOption
-				title={customizableProfile.title}
-				description={customizableProfile.description}
-				price={
-					yearlyBilling
-						? customizableProfile.yearlyPrice
-						: customizableProfile.monthlyPrice
-				}
-				select={() => selectOption(customizableProfile.title)}
-			/>
+			{allOptions.map((option) => {
+				return (
+					<ExtraOption
+						key={option.title}
+						title={option.title}
+						description={option.description}
+						price={yearlyBilling ? option.yearlyPrice : option.monthlyPrice}
+						select={() => selectOption(option.title)}
+					/>
+				);
+			})}
 		</div>
 	);
 }

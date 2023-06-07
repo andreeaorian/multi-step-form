@@ -6,22 +6,26 @@ import { ReactComponent as ArcadeIcon } from "../../../assets/img/icon-arcade.sv
 import { ReactComponent as AdvancedIcon } from "../../../assets/img/icon-advanced.svg";
 import { ReactComponent as ProIcon } from "../../../assets/img/icon-pro.svg";
 
-const arcadePlan = {
-	title: "Arcade",
-	monthlyPrice: 9,
-	yearlyPrice: 90,
-};
-const advancedPlan = {
-	title: "Advanced",
-	monthlyPrice: 12,
-	yearlyPrice: 120,
-};
-const proPlan = {
-	title: "Pro",
-	monthlyPrice: 15,
-	yearlyPrice: 150,
-};
-const allPlans = [arcadePlan, advancedPlan, proPlan];
+const allPlans = [
+	{
+		icon: ArcadeIcon,
+		title: "Arcade",
+		monthlyPrice: 9,
+		yearlyPrice: 90,
+	},
+	{
+		icon: AdvancedIcon,
+		title: "Advanced",
+		monthlyPrice: 12,
+		yearlyPrice: 120,
+	},
+	{
+		icon: ProIcon,
+		title: "Pro",
+		monthlyPrice: 15,
+		yearlyPrice: 150,
+	},
+];
 
 export default function Step2Content() {
 	const { planType, yearlyBilling, setBillingPlan } =
@@ -46,34 +50,19 @@ export default function Step2Content() {
 	return (
 		<div className="step2">
 			<div className="step2-plans">
-				<PlanBox
-					icon={ArcadeIcon}
-					title={arcadePlan.title}
-					price={
-						yearlyBilling ? arcadePlan.yearlyPrice : arcadePlan.monthlyPrice
-					}
-					isYearly={yearlyBilling}
-					isSelected={planType === arcadePlan.title}
-					select={() => choosePlan(arcadePlan.title)}
-				/>
-				<PlanBox
-					icon={AdvancedIcon}
-					title={advancedPlan.title}
-					price={
-						yearlyBilling ? advancedPlan.yearlyPrice : advancedPlan.monthlyPrice
-					}
-					isYearly={yearlyBilling}
-					isSelected={planType === advancedPlan.title}
-					select={() => choosePlan(advancedPlan.title)}
-				/>
-				<PlanBox
-					icon={ProIcon}
-					title={proPlan.title}
-					price={yearlyBilling ? proPlan.yearlyPrice : proPlan.monthlyPrice}
-					isYearly={yearlyBilling}
-					isSelected={planType === proPlan.title}
-					select={() => choosePlan(proPlan.title)}
-				/>
+				{allPlans.map((plan) => {
+					return (
+						<PlanBox
+							key={plan.title}
+							icon={plan.icon}
+							title={plan.title}
+							price={yearlyBilling ? plan.yearlyPrice : plan.monthlyPrice}
+							isYearly={yearlyBilling}
+							isSelected={planType === plan.title}
+							select={() => choosePlan(plan.title)}
+						/>
+					);
+				})}
 			</div>
 			<div className="step2-billing">
 				<label htmlFor="billingType" className="billing-toggle">

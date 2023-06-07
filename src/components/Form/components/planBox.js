@@ -7,7 +7,7 @@ export default function PlanBox({
 	select,
 }) {
 	return (
-		<button
+		<div
 			className={`plan-box ${isSelected ? "selected" : ""}`}
 			onClick={select}>
 			<Icon className="plan-icon" />
@@ -16,10 +16,8 @@ export default function PlanBox({
 				<div className="plan-price">{`$${price}${
 					isYearly ? "/yr" : "/mo"
 				}`}</div>
-				<div className="plan-discount" hidden={!isYearly}>
-					2 months free
-				</div>
+				{isYearly && <div className="plan-discount">2 months free</div>}
 			</div>
-		</button>
+		</div>
 	);
 }

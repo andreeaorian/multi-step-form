@@ -1,45 +1,16 @@
 import { useContext } from "react";
 import { FormDataContext } from "../../../context/formDataContext";
 import { StepContext } from "../../../context/stepContext";
+import { validateForm } from "../../../utils/validator";
 
 export default function FormButtons({ isBackVisible, isConfirm }) {
 	const { stepIndex, increaseStep, decreaseStep } = useContext(StepContext);
 	const { name, email, phone, setValidationErrors, confirm } =
 		useContext(FormDataContext);
 
-	const validate = () => {
-		let errors = {};
-
-		if (!name) {
-			errors.name = ["This field is required"];
-		}
-
-		if (!email) {
-			errors.email = ["This field is required"];
-		} else {
-			if (
-				!email.match(
-					/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-				)
-			) {
-				errors.email = ["Email is invalid"];
-			}
-		}
-
-		if (!phone) {
-			errors.phone = ["This field is required"];
-		} else {
-			if (!phone.match(/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/)) {
-				errors.phone = ["This phone number is invalid"];
-			}
-		}
-
-		return errors;
-	};
-
 	const saveAndGoToNextStep = () => {
 		if (stepIndex === 1) {
-			const validationErrors = validate();
+			const validationErrors = validateForm(name, email, phone);
 			setValidationErrors(validationErrors);
 
 			if (Object.keys(validationErrors).length === 0) {

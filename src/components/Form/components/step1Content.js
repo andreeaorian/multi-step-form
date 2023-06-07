@@ -5,16 +5,8 @@ import FormInput from "./formInput";
 export default function Step1Content() {
 	const { name, email, phone, setPersonalInfo } = useContext(FormDataContext);
 
-	const setName = ({ target: { value } }) => {
-		setPersonalInfo({ name: value });
-	};
-
-	const setEmail = ({ target: { value } }) => {
-		setPersonalInfo({ email: value });
-	};
-
-	const setPhone = ({ target: { value } }) => {
-		setPersonalInfo({ phone: value });
+	const setData = ({ target: { value, name } }) => {
+		setPersonalInfo({ [name]: value });
 	};
 
 	return (
@@ -22,9 +14,10 @@ export default function Step1Content() {
 			<FormInput
 				label="Name"
 				id="name"
+				name="name"
 				type="text"
 				placeholder="e.g. Stephen King"
-				onChange={setName}
+				onChange={setData}
 				value={name}
 			/>
 
@@ -32,8 +25,9 @@ export default function Step1Content() {
 				label="Email Address"
 				id="email"
 				type="email"
+				name="email"
 				placeholder="e.g. stephenking@lorem.com"
-				onChange={setEmail}
+				onChange={setData}
 				value={email}
 			/>
 
@@ -41,8 +35,9 @@ export default function Step1Content() {
 				label="Phone Number"
 				id="phone"
 				type="phone"
+				name="phone"
 				placeholder="e.g. +1 234 567 890"
-				onChange={setPhone}
+				onChange={setData}
 				value={phone}
 			/>
 		</form>

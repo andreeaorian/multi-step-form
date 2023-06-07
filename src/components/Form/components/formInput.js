@@ -6,23 +6,24 @@ export default function FormInput({
 	value,
 	type,
 	id,
+	name,
 	placeholder,
 	onChange,
 }) {
 	const { validationErrors } = useContext(FormDataContext);
+	const isValid = !!validationErrors && !!validationErrors[id];
 
 	return (
 		<div className="group">
 			<label className="label-error" htmlFor={id}>
 				{label}
-				{!!validationErrors && !!validationErrors[id] && (
-					<span className="error">{validationErrors[id]}</span>
-				)}
+				{isValid && <span className="error">{validationErrors[id]}</span>}
 			</label>
 			<input
-				className={!!validationErrors && !!validationErrors[id] ? "error" : ""}
+				className={isValid ? "error" : ""}
 				type={type}
 				id={id}
+				name={name}
 				placeholder={placeholder}
 				onChange={onChange}
 				defaultValue={value}

@@ -4,8 +4,11 @@ import { StepContext } from "../../context/stepContext";
 import {
 	ConfirmationMessage,
 	FormButtons,
-	FormContent,
 	FormTitle,
+	Step1Content,
+	Step2Content,
+	Step3Content,
+	Step4Content,
 } from "./components";
 
 const formTitles = [
@@ -41,7 +44,12 @@ export default function Form() {
 	) : (
 		<div className="form">
 			<FormTitle title={titleOject.title} subtitle={titleOject.subtitle} />
-			<FormContent />
+			<div className="form-content">
+				{stepIndex === 1 && <Step1Content />}
+				{stepIndex === 2 && <Step2Content />}
+				{stepIndex === 3 && <Step3Content />}
+				{stepIndex === 4 && <Step4Content />}
+			</div>
 			<FormButtons
 				isBackVisible={stepIndex !== 1}
 				isConfirm={stepIndex === 4}

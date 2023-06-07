@@ -1,4 +1,6 @@
-export default function FormTitle({ title, subtitle }) {
+import React from "react";
+
+function FormTitle({ title, subtitle }) {
 	return (
 		<div className="form-title">
 			<h1>{title}</h1>
@@ -6,3 +8,5 @@ export default function FormTitle({ title, subtitle }) {
 		</div>
 	);
 }
+
+export default React.memo(FormTitle);
